@@ -1,0 +1,31 @@
+#demo{
+    text-align: center;
+    margin-top: 150px;
+}
+.container{
+    padding: 70px;
+    margin: 30px;
+}
+.col-4{
+    border: 4px dotted black;
+    height: 500px;
+    margin: 0px;
+    padding: 10px;
+}
+table,th, tr {
+    border: 2px solid black;
+    border-collapse: collapse;
+   text-align: left;
+   color: black;
+}
+body{
+    background-image: url("backgroung-image.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+}
+.result{
+    color:black;
+    font-size: 25px;
+}
+

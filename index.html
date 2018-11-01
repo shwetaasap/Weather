@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dictionary-Api-Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <section id="demo">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 d-flex ">
+                    <h2>Weather</h2>
+                    <div>
+                          city:<input id="city"></input>
+                            <button onclick="getWeather()">Submit</button>
+                    </div>
+                    <div class="result"></div><br>
+                    <div>
+                          Latitude:<input id="lat" placeholder="latitude-value"></input>
+                          Longitude:<input id="lon" placeholder="longitude-value"></input>
+                            <button onclick="getVariousCities()">Submit</button>
+                    </div>
+                    <div class="result2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
