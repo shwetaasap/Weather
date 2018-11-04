@@ -1,31 +1,54 @@
 #demo{
     text-align: center;
-    margin-top: 150px;
+    margin-top: 25px;
 }
 .container{
     padding: 70px;
     margin: 30px;
 }
 .col-4{
-    border: 4px dotted black;
     height: 500px;
     margin: 0px;
     padding: 10px;
 }
-table,th, tr {
+th, tr, td {
     border: 2px solid black;
     border-collapse: collapse;
-   text-align: left;
+   text-align: center;
    color: black;
 }
-body{
-    background-image: url("backgroung-image.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.5;
+th{
+    background-color: cornflowerblue;
+}
+tr,td cityName{
+    background-color:rgb(124, 207, 233);
 }
 .result{
     color:black;
     font-size: 25px;
+    background-color: rgb(215, 228, 236);
 }
+h3{
+    color: blue;
+    border: 2px solid rgb(12, 12, 12);
+    background-color: rgb(215, 228, 159);
+    height: 40px;
+}
+.box{
+    background-color: rgb(70, 218, 223);
+    border: 1px solid black;
+       
+}
+.box1{
+    background-color: rgb(166, 230, 210);
+    border: 1px solid black; 
+    opacity: .8;  
+}
+
+.col-4{
+    background-image: url(bali-weather.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 

@@ -13,13 +13,17 @@ function getWeather() {
         var humidity = data.main.humidity;
         var country = data.sys.country;
         var description = data.weather[0].description;
+        /*var myObj = JSON.parse(cityName,function(){
+            cityName.style.color=red;
+            console.log(myObj);
+        });*/
         $(".result").append("The weather in " + cityName + " " + country + " is " +
-            description + " and temparature,humidity in Celsius is " + temp + '&deg;' + " and " + humidity + '&deg;'); //display result   
+            description + " and temparature,humidity in Celsius is " + temp + "&deg;C" + " and " + humidity + '%'); //display result   
     };
 };
 //getting weather information as per latitude and longitude entries and it gives 10 cities weather information covered in that circle.
 function getVariousCities() {
-    $(".result").html("");
+    $(".result2").html("");
     var a = document.getElementById("lat").value;//recieving value of latitude
     var b = document.getElementById("lon").value;//recieving value of longitude
     var apiCall = "http://api.openweathermap.org/data/2.5/find?lat=" + a + "&lon=" + b + "&cnt=15&APPID=a6c98c5f1512ef700db17185202188c4&units=metric"
@@ -27,7 +31,7 @@ function getVariousCities() {
     function weatherCall(data) {
         var counter = data.count;//getting data of number of cities found in given circle..
         //making table for displaying result
-        var appender = `<table style="width:100%">
+        var appender = `<table style="width:100%;text-align:center;">
         <tr>
             <th><b><mark>CityName<mark><b></th>
             <th><b><mark>Temperature<b><mark></th> 
@@ -40,21 +44,25 @@ function getVariousCities() {
 //for loop for fetching data as per counter value
         for (i = 0; i < counter; i++ ) {
             var cityName = data.list[i].name;
-            var temp = data.list[i].main.temp;
-            var humidity = data.list[i].main.humidity;
+            var temp = data.list[i].main.temp+ '&deg;C';
+            var humidity = data.list[i].main.humidity+'%';
             var rain = data.list[i].rain;
             var snow = data.list[i].snow;
             var country = data.list[i].sys.country;
-            var description = data.list[i].weather.description;
+            var description = data.list[i].weather[0].description;
+            var iconcode = data.list[i].weather[0].icon;
+            var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+            var imgSrc = '<img src = ' + iconurl + '>';
+            //var iconValue = $.getJSON(iconurl);
             appender += `
                 <tr>
-                  <td><b>"${cityName}"</td>
-                   <td>"${temp}"</td>
-                   <td>"${humidity}"</td>
-                   <td>"${rain}"</td>
-                   <td>"${snow}"</td>
-                   <td>"${country}"</td>
-                   <td>"${description}"</td>
+                  <td><b>${cityName}</td>
+                   <td>${temp}</td>
+                   <td>${humidity}</td>
+                   <td>${rain}</td>
+                   <td>${snow}</td>
+                   <td>${country}</td>
+                   <td>${description+imgSrc}</td>
                 </tr>
             `;
         }
