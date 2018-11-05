@@ -1,6 +1,5 @@
 
 
-
 //getting weather information of  single city that is entered
 function getWeather() {
     $(".result").html("");
@@ -13,12 +12,8 @@ function getWeather() {
         var humidity = data.main.humidity;
         var country = data.sys.country;
         var description = data.weather[0].description;
-        /*var myObj = JSON.parse(cityName,function(){
-            cityName.style.color=red;
-            console.log(myObj);
-        });*/
-        $(".result").append("The weather in " + cityName + " " + country + " is " +
-            description + " and temparature,humidity in Celsius is " + temp + "&deg;C" + " and " + humidity + '%'); //display result   
+        $(".result").append("The weather in <span class='img1'>" + cityName + " " + country + "</span> is<span class='img1'> " +
+            description + "</span> and temparature,humidity in Celsius is <span class='img1'>" + temp + "&deg;C" + " and " + humidity + '%</span>'); //display result   
     };
 };
 //getting weather information as per latitude and longitude entries and it gives 10 cities weather information covered in that circle.

@@ -50,5 +50,26 @@ h3{
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+#globe{
+    width: 170px;
+    -webkit-animation: mymove 8s infinite ease-in-out;
+    position: relative;
+}
+@-webkit-keyframes mymove {
+0% {
+    -webkit-transform: rotateY(0deg);
+}
+100% {
+    -webkit-transform: rotateY(360deg);
+}
+}
+#gify,#sun,#spring, #autumn{
+    display:none;
+}
+.img1{
+    color: brown;
+    font-size: 28px;
+    background-color: darkseagreen;
+    font-style: italic;
+}
 
