@@ -1,6 +1,9 @@
 #demo{
     text-align: center;
     margin-top: 25px;
+    background-image: url(bali-weather.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .container{
     padding: 70px;
@@ -43,12 +46,6 @@ h3{
     background-color: rgb(166, 230, 210);
     border: 1px solid black; 
     opacity: .8;  
-}
-
-.col-4{
-    background-image: url(bali-weather.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 #globe{
     width: 170px;
