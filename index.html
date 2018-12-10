@@ -1,44 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dictionary-Api-Project</title>
+    <title>Weather-Api-Project</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
-    <section id="demo">
-            <img src="giphy.gif" alt="image" id="gify">
-            <img src="sun.gif" alt="image" id="sun">
-            <img src="spring.gif" alt="image" id="spring">
-            <img src="autumn.gif" alt="image" id="autumn">
-        <div class="container">
+<body onmousemove="cursor(event)" id="demo">
+    <div id="image">
+        <img src="sun.jpg" alt="image">
+    </div>
+<section>
+        <div class="container-fluid">
             <div class="row">
-                    <img src="globe.png" alt="image" id="globe">
-                <div class="col-4 d-flex ">
-                    <h3>Current Weather Information</h3>
-                    <div class="box">
-                          <h4>City:<input id="city" placeholder="Enter city name"></input>
-                            <button onclick="getWeather()">Submit</button></h4>
+                <div class="col-6">
+                    <div class="card">
+                        <img src="globe.png" alt="image" id="globe" class="image-responsive">
+                        <div class="card-body">
+                            <div class="box card-title">
+                                <h3>Current Weather Information</h3>
+                                <div class="card-tex">
+                                    <h4>City:<input id="city" placeholder="Enter city name">
+                                        <button onclick="getWeather()">Submit</button></h4>
+                                    <div class="result"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="result"></div><br>
-                    <div class="box1">
-                          <h4 class="text">Latitude:<input id="lat" placeholder="latitude-value"></input>
-                          Longitude:<input id="lon" placeholder="longitude-value"></input>
-                            <button onclick="getVariousCities()">Submit</button></h4>
-                    </div>
-                    <div class="result2"></div>
                 </div>
             </div>
         </div>
-    </section>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="box1 card-heading">
+                                    <h3>Weather information-Cities in cycle</h3>
+                                    <h4 class="text">Latitude:<input id="lat" placeholder="Enter latitude-value">
+                                        Longitude:<input id="lon" placeholder="Enter longitude-value">
+                                        <button onclick="getVariousCities()">Submit</button></h4>
+                                </div>
+                                <div class="card-tex">
+                                    <div class="result2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>

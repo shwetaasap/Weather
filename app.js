@@ -1,6 +1,14 @@
+//cursor image moving on webpage
+ var x;
+ var y;
+ function cursor(event){
+     x=event.clientX;//these retrieve the cordinates where the mouse is moved
+     y=event.clientY;
+     document.getElementById('image').style.top=y+'px';
+     document.getElementById('image').style.left=x+'px';//this change position of div tag and image
+ }
 
-
-//getting weather information of  single city that is entered
+//getting  currentweather information .
 function getWeather() {
     $(".result").html("");
     var cityName = document.getElementById("city").value;
@@ -12,10 +20,17 @@ function getWeather() {
         var humidity = data.main.humidity;
         var country = data.sys.country;
         var description = data.weather[0].description;
-        $(".result").append("The weather in <span class='img1'>" + cityName + " " + country + "</span> is<span class='img1'> " +
-            description + "</span> and temparature,humidity in Celsius is <span class='img1'>" + temp + "&deg;C" + " and " + humidity + '%</span>'); //display result   
+        var iconcode = data.weather[0].icon;
+        var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+        var imgSrc = '<img src = ' + iconurl + '>';
+        var output = `<h2><mark> ${cityName + country}<mark></h2>
+        <h4><mark>${description+imgSrc}<mark></h4>
+        <h4>"Temparature & Humidity in Celsius is <mark> ${temp + "&deg;C" + "&" + humidity + '%'}<mark></h4>`;
+        $(".result").append(output);
+             //display result   
     };
 };
+
 //getting weather information as per latitude and longitude entries and it gives 10 cities weather information covered in that circle.
 function getVariousCities() {
     $(".result2").html("");
@@ -26,16 +41,18 @@ function getVariousCities() {
     function weatherCall(data) {
         var counter = data.count;//getting data of number of cities found in given circle..
         //making table for displaying result
-        var appender = `<table style="width:100%;text-align:center;">
+        var appender = `
+        <div style="overflow-x:auto;"><table style="width:100%;text-align:left;">
         <tr>
-            <th><b><mark>CityName<mark><b></th>
-            <th><b><mark>Temperature<b><mark></th> 
-            <th><b><mark>Humidity<b><mark></th>
-            <th><b><mark>Rain<b><mark></th>
-            <th><b><mark>Snow<b><mark></th>
-            <th><b><mark>Country<b><mark></th>
-            <th><b><mark>Description</th>
-        </tr>`;
+            <th><b>CityName<b></th>
+            <th><b>Temperature<b></th> 
+            <th><b>Humidity<b></th>
+            <th><b>Rain<b></th>
+            <th><b>Snow<b></th>
+            <th><b>Country<b></th>
+            <th><b>Description</th>
+        </tr>
+        </div>`;
 //for loop for fetching data as per counter value
         for (i = 0; i < counter; i++ ) {
             var cityName = data.list[i].name;
@@ -65,18 +82,6 @@ function getVariousCities() {
         $(".result2").append(appender);//displaying result
     };
 };
+  
+  
 
-
-/*function getWord(){
-  var word_id=document.getElementById("word").value;
-  var word_id= word_id.toLowerCase();
-var url="https://od-api.oxforddictionaries.com:443/api/v1/entries/en?"+word_id+"";
-    const header = {
-        "Accept": "application/json",
-        "app_id": "0bd7c42e",
-        "app_key": "4272f7b4c0e703965121c6a30733d899"
-      }
-      $.getJSON(url+header,function(meaning){
-       var defination=meaning.defination;
-       console.log("The word means "+ defination)});
-   };*/
